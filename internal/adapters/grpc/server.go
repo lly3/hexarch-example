@@ -2,8 +2,8 @@ package rpc
 
 import (
 	"fmt"
-	"hex/internal/adapters/framework/left/grpc/pb"
-	"hex/internal/ports"
+	"hex/internal/adapters/grpc/pb"
+	"hex/internal/application/use_case"
 	"log"
 	"net"
 
@@ -11,10 +11,10 @@ import (
 )
 
 type Adapter struct {
-	useCase ports.UseCase
+	useCase use_case.UseCase
 }
 
-func New(useCase ports.UseCase) *Adapter {
+func New(useCase use_case.UseCase) *Adapter {
 	return &Adapter{
 		useCase: useCase,
 	}

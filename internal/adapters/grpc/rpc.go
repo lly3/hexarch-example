@@ -2,7 +2,7 @@ package rpc
 
 import (
 	"context"
-	"hex/internal/adapters/framework/left/grpc/pb"
+	"hex/internal/adapters/grpc/pb"
 	"hex/internal/application/domain"
 	"hex/internal/application/use_case"
 

@@ -3,8 +3,8 @@ package rpc
 import (
 	"context"
 	"fmt"
-	"hex/internal/adapters/framework/left/grpc/pb"
-	"hex/internal/adapters/framework/right/db/order_repository"
+	"hex/internal/adapters/grpc/pb"
+	"hex/internal/adapters/repository/order_repository"
 	"hex/internal/application/use_case"
 	"log"
 	"net"
@@ -27,7 +27,7 @@ var mockCreateOrderRequestData = &pb.CreateOrderRequestData{
 	OrderId:      "0",
 	ClientId:     "0",
 	RestaurantId: "0",
-	State:        "waiting-for-confirmation",
+	State:        "waiting-for-payment",
 }
 
 var mockCreateOrderClient = &pb.CreateOrderClient{
@@ -127,7 +127,7 @@ func TestUpdateOrderStatus(t *testing.T) {
 
 	req := &pb.UpdateOrderRequest{
 		OrderId: "0",
-		State:   "delivering",
+		State:   "waiting-for-confirmation",
 	}
 
 	_, err := client.UpdateOrderStatus(ctx, req)

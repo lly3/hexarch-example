@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	rpc "hex/internal/adapters/framework/left/grpc"
-	"hex/internal/adapters/framework/right/db/order_repository"
+	rpc "hex/internal/adapters/grpc"
+	"hex/internal/adapters/repository/order_repository"
 	"hex/internal/application/use_case"
 	"log"
 	"time"
